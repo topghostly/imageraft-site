@@ -11,7 +11,7 @@ function Navibar() {
   let navigate = useNavigate();
   const inputHandler = (e) => {
     e.preventDefault();
-    navigate(`/query/${input}`);
+    navigate(`/imageraft-site/query/${input}`);
   };
   const containerVariant = {
     initial: {
@@ -51,7 +51,7 @@ function Navibar() {
   return (
     <NavWrapper variants={containerVariant} initial="initial" animate="animate">
       <Navbar className="container-sm">
-        <ImageContainer to={"/"}>
+        <ImageContainer to={"/imageraft-site"}>
           <motion.img variants={xMovement} src={Logo} alt="imageraftLogo" />
         </ImageContainer>
         <div className="for-search">
@@ -73,58 +73,58 @@ function Navibar() {
             staggerChildren: 0.2,
           }}
         >
-          <Slider to={"/query/art"} variants={showUp}>
+          <Slider to={"/imageraft-site/query/art"} variants={showUp}>
             <p>Art</p>
           </Slider>
-          <Slider variants={showUp} to={"/query/architecture"}>
+          <Slider variants={showUp} to={"/imageraft-site/query/architecture"}>
             <p>Architecture</p>
           </Slider>
-          <Slider variants={showUp} to={"/query/landscape"}>
+          <Slider variants={showUp} to={"/imageraft-site/query/landscape"}>
             <p>Landscape</p>
           </Slider>
-          <Slider variants={showUp} to={"/query/illustration"}>
+          <Slider variants={showUp} to={"/imageraft-site/query/illustration"}>
             <p>Illustration</p>
           </Slider>
-          <Slider variants={showUp} to={"/query/birds"}>
+          <Slider variants={showUp} to={"/imageraft-site/query/birds"}>
             <p>Birds</p>
           </Slider>
-          <Slider variants={showUp} to={"/query/building"}>
+          <Slider variants={showUp} to={"/imageraft-site/query/building"}>
             <p>Buildings</p>
           </Slider>
-          <Slider variants={showUp} to={"/query/forest"}>
+          <Slider variants={showUp} to={"/imageraft-site/query/forest"}>
             <p>Forest</p>
           </Slider>
-          <Slider variants={showUp} to={"/query/technology"}>
+          <Slider variants={showUp} to={"/imageraft-site/query/technology"}>
             <p>Technology</p>
           </Slider>
-          <Slider variants={showUp} to={"/query/experimental"}>
+          <Slider variants={showUp} to={"/imageraft-site/query/experimental"}>
             <p>Experimental</p>
           </Slider>
-          <Slider variants={showUp} to={"/query/beauty"}>
+          <Slider variants={showUp} to={"/imageraft-site/query/beauty"}>
             <p>Beauty</p>
           </Slider>
-          <Slider variants={showUp} to={"/query/interior"}>
+          <Slider variants={showUp} to={"/imageraft-site/query/interior"}>
             <p>Interior</p>
           </Slider>
-          <Slider variants={showUp} to={"/query/mountain"}>
+          <Slider variants={showUp} to={"/imageraft-site/query/mountain"}>
             <p>Mountains</p>
           </Slider>
-          <Slider variants={showUp} to={"/query/bread"}>
+          <Slider variants={showUp} to={"/imageraft-site/query/bread"}>
             <p>Bread</p>
           </Slider>
-          <Slider variants={showUp} to={"/query/smile"}>
+          <Slider variants={showUp} to={"/imageraft-site/query/smile"}>
             <p>Smile</p>
           </Slider>
-          <Slider variants={showUp} to={"/query/pineapple"}>
+          <Slider variants={showUp} to={"/imageraft-site/query/pineapple"}>
             <p>Pineapple</p>
           </Slider>
-          <Slider variants={showUp} to={"/query/elephant"}>
+          <Slider variants={showUp} to={"/imageraft-site/query/elephant"}>
             <p>Elephant</p>
           </Slider>
-          <Slider variants={showUp} to={"/query/chemistry"}>
+          <Slider variants={showUp} to={"/imageraft-site/query/chemistry"}>
             <p>Chemistry</p>
           </Slider>
-          <Slider variants={showUp} to={"/query/engine"}>
+          <Slider variants={showUp} to={"/imageraft-site/query/engine"}>
             <p>Engine</p>
           </Slider>
         </ShadoeContainer>

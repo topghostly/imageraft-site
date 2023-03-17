@@ -3,15 +3,16 @@ import "../App.css";
 import styled from "styled-components";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Logo from "./static/imageraft.png";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <FooterWrapper>
       <div className="container-lg">
         <div className="row">
-          <div className="col-md-3 columns">
-            <img src={Logo} alt="" />
-          </div>
+          <Link className="col-md-3 columns" to={"/imageraft-site"}>
+            <img src={Logo} alt="theLogo" />
+          </Link>
           <div className="col-md-4 columns p-1">
             <div className="footer-links">About</div>
             <div className="footer-links">Name</div>
@@ -25,7 +26,7 @@ function Footer() {
           </div>
         </div>
         <p className="m-3 mb-3 text-muted text-center">
-          <small>© 2023. All Rights Reserved. the new one</small>
+          <small>© 2023. All Rights Reserved.</small>
         </p>
       </div>
     </FooterWrapper>

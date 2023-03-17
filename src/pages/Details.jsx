@@ -52,7 +52,7 @@ function Details() {
         Authorization: process.env.REACT_APP_API_KEY,
       },
     };
-    const url = `https://api.pexels.com/v1/search?query=${queryName}&per_page=40&page=1`;
+    const url = `https://api.pexels.com/v1/search?query=${queryName}&per_page=80&page=1`;
 
     const workRequest = await fetch(url, options);
     const workData = await workRequest.json();
@@ -110,7 +110,7 @@ function Details() {
                 onClick={(e) => {
                   e.preventDefault();
                   window.scrollTo(0, 0);
-                  navigate(`/details/${photo.id}`);
+                  navigate(`/imageraft-site/details/${photo.id}`);
                 }}
               >
                 <WorkGalleryIMG src={photo.src.large} />
@@ -147,6 +147,7 @@ const WholeTab = styled.div`
     left: 15px;
     scale: 2;
     z-index: 10;
+    cursor: pointer;
   }
 
   @media screen and (max-width: 767px) {

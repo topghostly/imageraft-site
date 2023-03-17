@@ -48,7 +48,7 @@ function Index() {
                 key={photo.id}
                 onClick={(e) => {
                   e.preventDefault();
-                  navigate(`/details/${photo.id}`);
+                  navigate(`/imageraft-site/details/${photo.id}`);
                 }}
               >
                 <GalleryIMG

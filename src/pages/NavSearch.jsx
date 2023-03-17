@@ -47,7 +47,7 @@ function NavSearch() {
                 key={photo.id}
                 onClick={(e) => {
                   e.preventDefault();
-                  navigate(`/details/${photo.id}`);
+                  navigate(`/imageraft-site/details/${photo.id}`);
                 }}
               >
                 <NavSearchGalleryIMG src={photo.src.large} />
