@@ -25,7 +25,7 @@ function Footer() {
           </div>
         </div>
         <p className="m-3 mb-3 text-muted text-center">
-          <small>© 2023. All Rights Reserved.</small>
+          <small>© 2023. All Rights Reserved. the new one</small>
         </p>
       </div>
     </FooterWrapper>
