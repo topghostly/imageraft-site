@@ -1,17 +1,18 @@
 {
   "files": {
     "main.css": "/imageraft-site/static/css/main.b30b4b1c.css",
-    "main.js": "/imageraft-site/static/js/main.d948696e.js",
+    "main.js": "/imageraft-site/static/js/main.b0a99b17.js",
     "static/media/dummyBackground.JPG": "/imageraft-site/static/media/dummyBackground.972d388acae87aa64e2e.JPG",
     "static/media/Euclid Circular A Medium.ttf": "/imageraft-site/static/media/Euclid Circular A Medium.a5befbfcb71cd093cc56.ttf",
+    "static/media/navLogo-07.png": "/imageraft-site/static/media/navLogo-07.a9226abadc2ddc998247.png",
     "static/media/imageraftSingle-05.png": "/imageraft-site/static/media/imageraftSingle-05.c770a39c1a32f48401c5.png",
     "static/media/imageraft.png": "/imageraft-site/static/media/imageraft.a671fae008141425e457.png",
     "index.html": "/imageraft-site/index.html",
     "main.b30b4b1c.css.map": "/imageraft-site/static/css/main.b30b4b1c.css.map",
-    "main.d948696e.js.map": "/imageraft-site/static/js/main.d948696e.js.map"
+    "main.b0a99b17.js.map": "/imageraft-site/static/js/main.b0a99b17.js.map"
   },
   "entrypoints": [
     "static/css/main.b30b4b1c.css",
-    "static/js/main.d948696e.js"
+    "static/js/main.b0a99b17.js"
   ]
 }
