@@ -15,11 +15,11 @@ function Pages() {
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/query/:navlink" element={<NavSearch />}></Route>
-          {/* <Route path="/search/:search" element={<Search />}></Route> */}
           <Route path="/" element={<Index />}></Route>
           <Route path="/details/:imageid" element={<Details />}></Route>
         </Routes>
       </AnimatePresence>
+      <Index />
       <Footer />
     </div>
   );
