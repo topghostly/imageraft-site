@@ -14,10 +14,10 @@ function Footer() {
             <img src={Logo} alt="theLogo" />
           </Link>
           <div className="col-md-4 columns p-1">
-            <div className="footer-links">About</div>
-            <div className="footer-links">Name</div>
-            <div className="footer-links">Terms</div>
-            <div className="footer-links">Terms</div>
+            <div className="footer-links text-muted">About</div>
+            <div className="footer-links text-muted">Name</div>
+            <div className="footer-links text-muted">Terms</div>
+            <div className="footer-links text-muted">Terms</div>
           </div>
           <div className="col-md-5 columns">
             <form action="POST">

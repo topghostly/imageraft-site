@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Logo from "./static/imageraft.png";
+import SmallLogo from "./static/navLogo-07.png";
 import styled from "styled-components";
 import { NavLink, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 function Navibar() {
-  const PlaceHolder = "This is the dummy placeHolder";
   const [input, setInput] = useState("");
 
   let navigate = useNavigate();
@@ -52,13 +52,19 @@ function Navibar() {
     <NavWrapper variants={containerVariant} initial="initial" animate="animate">
       <Navbar className="container-sm">
         <ImageContainer to={"/imageraft-site"}>
-          <motion.img variants={xMovement} src={Logo} alt="imageraftLogo" />
+          <motion.img
+            variants={xMovement}
+            src={Logo}
+            alt="imageraftLogo"
+            className="big-logo"
+          />
+          <img src={SmallLogo} alt="Logo" className="small-logo" />
         </ImageContainer>
         <div className="for-search">
           <form action="" onSubmit={inputHandler}>
             <motion.input
               type="text"
-              placeholder={PlaceHolder}
+              placeholder="Search for High Quality Stock images"
               onChange={(e) => {
                 setInput(e.target.value);
               }}
@@ -168,17 +174,28 @@ const Navbar = styled.div`
 
     @media screen and (max-width: 575px) {
       padding: 0px 10px;
-      width: 65%;
+      width: 85%;
     }
   }
 `;
 const ImageContainer = styled(NavLink)`
-  img {
+  img.big-logo {
     width: 150px;
     cursor: pointer;
 
     @media screen and (max-width: 600px) {
-      scale: 0.8;
+      display: none;
+    }
+  }
+  img.small-logo {
+    width: 10px;
+    display: none;
+  }
+  @media screen and (max-width: 600px) {
+    img.small-logo {
+      width: 30px;
+      padding-left: 5px;
+      display: block;
     }
   }
 `;
