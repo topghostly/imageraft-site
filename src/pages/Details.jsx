@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import ImagePlaceholder from "../component/ImagePlaceholder";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -13,6 +14,7 @@ function Details() {
   const [originalImageSRC, setOriginalImageSRC] = useState("");
   const [imageWidth, setImageWidth] = useState("");
   const [imageHeight, setImageHeight] = useState("");
+  const [placeHolder, setPlaceHolder] = useState(true);
 
   // Get The Image to Download
   const prevPage = () => {
@@ -57,6 +59,7 @@ function Details() {
     const workRequest = await fetch(url, options);
     const workData = await workRequest.json();
     setGetWorks(workData.photos);
+    setPlaceHolder(false);
   };
   useEffect(() => {
     getDownloadIMG(params.imageid);
@@ -71,7 +74,7 @@ function Details() {
       exit={{ opacity: 0 }}
       transition={{
         ease: "easeInOut",
-        duration: 1,
+        duration: 0.5,
       }}
     >
       <div className="container-sm">
@@ -102,6 +105,7 @@ function Details() {
           </DownloadTab>
         </WholeTab>
         <p className="mt-5">Other Pictures by {getName}</p>
+        {placeHolder && <ImagePlaceholder />}
         <WorkGallery>
           {getWorks.map((photo) => {
             return (

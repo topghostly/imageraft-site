@@ -19,3 +19,11 @@ code {
 * {
   font-family: "Euclid Circular A", sans-serif;
 }
+@keyframes SwipeAniation {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}

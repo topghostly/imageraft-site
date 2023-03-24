@@ -3,6 +3,7 @@ import Index from "./Index";
 import Details from "./Details";
 import Footer from "../component/Footer";
 import NavSearch from "./NavSearch";
+import ImagePlaceholder from "../component/ImagePlaceholder";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
@@ -18,6 +19,10 @@ function Pages() {
             element={<NavSearch />}
           ></Route>
           <Route path="imageraft-site/" element={<Index />}></Route>
+          <Route
+            path="imageraft-site/test"
+            element={<ImagePlaceholder />}
+          ></Route>
           <Route
             path="imageraft-site/details/:imageid"
             element={<Details />}

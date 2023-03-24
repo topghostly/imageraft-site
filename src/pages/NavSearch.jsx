@@ -4,10 +4,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../component/Navbar";
 import { motion } from "framer-motion";
+import ImagePlaceholder from "../component/ImagePlaceholder";
 
 function NavSearch() {
   const navigate = useNavigate();
   const [searchIMG, getSearchedIMG] = useState([]);
+  const [placeHolder, setPlaceHolder] = useState(true);
   let params = useParams();
   let searchKeyword = params.navlink;
 
@@ -22,6 +24,7 @@ function NavSearch() {
     const request = await fetch(url, options);
     const data = await request.json();
     getSearchedIMG(data.photos);
+    setPlaceHolder(false);
   };
 
   useEffect(() => {
@@ -34,12 +37,13 @@ function NavSearch() {
       exit={{ opacity: 0 }}
       transition={{
         ease: "easeInOut",
-        duration: 1,
+        duration: 0.5,
       }}
     >
       <Navbar />
       <div className="container-sm">
         <HeadingText>Results on "{params.navlink}"</HeadingText>
+        {placeHolder && <ImagePlaceholder />}
         <NavSearchGallery>
           {searchIMG.map((photo) => {
             return (

@@ -5,10 +5,12 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../component/Navbar";
 import { motion } from "framer-motion";
+import ImagePlaceholder from "../component/ImagePlaceholder";
 
 function Index() {
   let navigate = useNavigate();
   const [photos, setPhotos] = useState([]);
+  const [placeHolder, setPlaceHolder] = useState(true);
 
   const getRandomPhotos = async () => {
     const url = "https://api.pexels.com/v1/curated?per_page=80&page=1";
@@ -20,6 +22,7 @@ function Index() {
     const response = await fetch(url, options);
     const data = await response.json();
     setPhotos(data.photos);
+    setPlaceHolder(false);
   };
 
   useEffect(() => {
@@ -33,11 +36,12 @@ function Index() {
       exit={{ opacity: 0 }}
       transition={{
         ease: "easeInOut",
-        duration: 1,
+        duration: 0.5,
       }}
     >
       <Navbar />
       <ImageBanner />
+      {placeHolder && <ImagePlaceholder />}
       {/* Code for the images gallery */}
 
       <div className="container-sm">
@@ -55,6 +59,7 @@ function Index() {
                   layout
                   src={photo.src.large}
                   layoutId="main-animate"
+                  loading="lazy"
                 />
                 <div className="photo-description">
                   <p className="small">{photo.photographer}</p>

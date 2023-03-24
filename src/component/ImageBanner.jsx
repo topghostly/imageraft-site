@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import BackgroundIMG from "./static/dummyBackground.JPG";
+import BackgroundIMG from "./static/backGround.jpg";
 import Logo from "./static/imageraftSingle-05.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
