@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/imageraft-site/static/css/main.91ca0989.css",
-    "main.js": "/imageraft-site/static/js/main.d36e6efb.js",
+    "main.js": "/imageraft-site/static/js/main.fbe8a310.js",
     "static/media/texe2image.png": "/imageraft-site/static/media/texe2image.1630aeaef8ea6949044c.png",
     "static/media/Euclid Circular A Medium.ttf": "/imageraft-site/static/media/Euclid Circular A Medium.a5befbfcb71cd093cc56.ttf",
     "static/media/navLogo-07.png": "/imageraft-site/static/media/navLogo-07.a9226abadc2ddc998247.png",
@@ -10,10 +10,10 @@
     "static/media/imageraft.png": "/imageraft-site/static/media/imageraft.a671fae008141425e457.png",
     "index.html": "/imageraft-site/index.html",
     "main.91ca0989.css.map": "/imageraft-site/static/css/main.91ca0989.css.map",
-    "main.d36e6efb.js.map": "/imageraft-site/static/js/main.d36e6efb.js.map"
+    "main.fbe8a310.js.map": "/imageraft-site/static/js/main.fbe8a310.js.map"
   },
   "entrypoints": [
     "static/css/main.91ca0989.css",
-    "static/js/main.d36e6efb.js"
+    "static/js/main.fbe8a310.js"
   ]
 }
