@@ -2,14 +2,18 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams, useNavigate } from "react-router-dom";
-import Navbar from "../component/Navbar";
 import { motion } from "framer-motion";
 import ImagePlaceholder from "../component/ImagePlaceholder";
 
-function NavSearch() {
+function NavSearch({ preloaders }) {
   const navigate = useNavigate();
   const [searchIMG, getSearchedIMG] = useState([]);
   const [placeHolder, setPlaceHolder] = useState(true);
+
+  const renderComponent = () => {
+    window.scrollTo(0, 0);
+  };
+
   let params = useParams();
   let searchKeyword = params.navlink;
 
@@ -28,21 +32,38 @@ function NavSearch() {
   };
 
   useEffect(() => {
+    renderComponent();
+    preloaders(false);
+  }, [preloaders]);
+  useEffect(() => {
     getSearchedItem(searchKeyword);
   }, [searchKeyword]);
   return (
     <StyledWrapper
-      animate={{ opacity: 1 }}
-      initial={{ opacity: 0 }}
-      exit={{ opacity: 0 }}
+      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 30 }}
+      exit={{ opacity: 0, y: -30 }}
       transition={{
         ease: "easeInOut",
-        duration: 0.5,
+        duration: 0.2,
       }}
     >
-      <Navbar />
       <div className="container-sm">
-        <HeadingText>Results on "{params.navlink}"</HeadingText>
+        <HeadingText
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            delay: 1,
+          }}
+        >
+          Results on "{params.navlink}"
+        </HeadingText>
         {placeHolder && <ImagePlaceholder />}
         <NavSearchGallery>
           {searchIMG.map((photo) => {
@@ -67,13 +88,17 @@ function NavSearch() {
   );
 }
 const StyledWrapper = styled(motion.div)`
-  margin-top: 100px;
   max-width: 100vw;
   overflow-x: hidden;
+  margin-top: 100px;
+  @media screen and (max-width: 575px) {
+    margin-top: 0px;
+  }
 `;
-const HeadingText = styled.p`
+const HeadingText = styled(motion.p)`
   padding-top: 50px;
   font-size: 20px;
+  color: #353535;
 `;
 
 const NavSearchGallery = styled.div`
@@ -210,7 +235,7 @@ const NavSearchImageHolder = styled.div`
       z-index: 4;
       margin: 0px;
       padding: 0px;
-      color: #000000;
+      color: #353535;
       padding-left: 0px;
       padding-bottom: 0px;
       font-size: 15px;
@@ -226,7 +251,7 @@ const NavSearchImageHolder = styled.div`
         z-index: 4;
         margin: 0px;
         padding: 0px;
-        color: #000000;
+        color: #353535;
         padding-left: 0px;
         padding-bottom: 0px;
       }

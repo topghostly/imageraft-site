@@ -107,7 +107,7 @@ const LoaderAnim = styled.div`
     #f3f3f3 90%
   );
   height: 100%;
-  animation: SwipeAniation 1s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+  animation: SwipeAnimation 2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
   animation-delay: ${(props) => props.delay}s;
 `;
 export default ImagePlaceholder;

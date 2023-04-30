@@ -19,7 +19,7 @@ code {
 * {
   font-family: "Euclid Circular A", sans-serif;
 }
-@keyframes SwipeAniation {
+@keyframes SwipeAnimation {
   0% {
     left: -100%;
   }

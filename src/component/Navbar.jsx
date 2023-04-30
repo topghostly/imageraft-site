@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Logo from "./static/imageraft.png";
 import SmallLogo from "./static/navLogo-07.png";
 import styled from "styled-components";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 function Navibar() {
   const [input, setInput] = useState("");
@@ -12,6 +12,7 @@ function Navibar() {
   const inputHandler = (e) => {
     e.preventDefault();
     navigate(`/imageraft-site/query/${input}`);
+    setInput("");
   };
   const containerVariant = {
     initial: {
@@ -64,6 +65,7 @@ function Navibar() {
           <form action="" onSubmit={inputHandler}>
             <motion.input
               type="text"
+              required
               placeholder="Search for High Quality Stock images"
               onChange={(e) => {
                 setInput(e.target.value);
@@ -72,6 +74,7 @@ function Navibar() {
             />
           </form>
         </div>
+        <TTI to={"imageraft-site/imageai"}>Text To image</TTI>
       </Navbar>
       <SliderContainer>
         <ShadoeContainer
@@ -140,14 +143,16 @@ function Navibar() {
 }
 
 const NavWrapper = styled(motion.div)`
-  width: 100vw;
+  max-width: 100vw;
   height: auto;
-  position: fixed;
-  top: -100px;
   top: 0px;
   background-color: white;
   z-index: 100;
   border-bottom: solid 1px #e6e6e6;
+  position: fixed;
+  @media screen and (max-width: 575px) {
+    position: relative;
+  }
 `;
 const Navbar = styled.div`
   position: relative;
@@ -217,8 +222,10 @@ const ShadoeContainer = styled.div`
   height: 45px;
   ::before {
     content: "";
-    position: fixed;
-    top: 4rem;
+    position: absolute;
+    display: none;
+    scroll-snap-align: center;
+    bottom: 0px;
     left: 0px;
     width: 100vw;
     height: 50px;
@@ -240,14 +247,14 @@ const Slider = styled(NavLink)`
   border-radius: 100px;
   position: relative;
   cursor: pointer;
-  color: black;
+  color: #353535;
   transition: all 0.1s ease-in-out;
   :hover {
     color: #b8b7be;
     transition: all 0.1s ease-in-out;
   }
   &.active {
-    background-color: black;
+    background-color: #353535;
     border-radius: 50px;
     color: white;
     transition: all 0.1s ease-in-out;
@@ -258,4 +265,48 @@ const Slider = styled(NavLink)`
     margin: 0px;
   }
 `;
-export default Navibar;
+const TTI = styled(Link)`
+  color: #353535;
+  position: relative;
+  background-color: white;
+  text-decoration: none;
+  padding: 5px 5px;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+  ::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    background-color: #353535;
+    transform: translateX(-110%);
+    transition: all 0.6s cubic-bezier(0.47, 0, 0.745, 0.715);
+  }
+  :hover {
+    color: #353535;
+    ::before {
+      transform: translateX(0);
+      transition: all 0.6s cubic-bezier(0.47, 0, 0.745, 0.715);
+    }
+  }
+  @media screen and (max-width: 767px) {
+    padding: 1px 1px;
+    width: 130px;
+    padding-bottom: 5px;
+  }
+  @media screen and (max-width: 490px) {
+    padding: 1px 1px;
+    width: 200px;
+    padding-bottom: 0px;
+
+    ::before {
+      display: none;
+    }
+    :hover {
+      color: #8d8d8d;
+    }
+  }
+`;
+export default memo(Navibar);

@@ -1,33 +1,14 @@
-import React, { useState } from "react";
 import styled from "styled-components";
 import BackgroundIMG from "./static/backGround.jpg";
 import Logo from "./static/imageraftSingle-05.png";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useNavigate } from "react-router-dom";
 
 function ImageBanner() {
-  const [getSearch, setGetSearch] = useState("");
-  let navigate = useNavigate();
-
-  const searchHandler = (e) => {
-    e.preventDefault();
-    navigate(`/imageraft-site/query/${getSearch}`);
-  };
   return (
     <Banner>
       <BannerText className="container-sm">
         <LogoIMG className="logo-image" src={Logo} alt="Imageraft_Logo" />
         <p>The one-stop art work collection on the internet</p>
-        <input
-          type="text"
-          name="serch"
-          placeholder="Search for High Quality Art works"
-          onChange={(e) => {
-            setGetSearch(e.target.value);
-          }}
-          onSubmit={searchHandler}
-          value={getSearch}
-        />
         <p className="referance">Powered By Pexels</p>
       </BannerText>
       <Bannerimg src={BackgroundIMG} alt="background_image" />
@@ -43,6 +24,14 @@ const Banner = styled.div`
   padding: 0px;
   overflow: hidden;
   z-index: -1;
+
+  .referance {
+    position: absolute;
+    bottom: 10px;
+    scale: 0.4;
+    z-index: 2;
+    opacity: 0.6;
+  }
   @media screen and (max-width: 1000px) {
     height: 60vh;
   }
@@ -57,7 +46,7 @@ const Banner = styled.div`
     width: 100%;
     height: 100%;
     background: rgb(0, 0, 0);
-    opacity: 0.4;
+    opacity: 0.1;
     pointer-events: none;
   }
 `;
@@ -79,14 +68,15 @@ const BannerText = styled.div`
   height: 100%;
   position: relative;
   pointer-events: none;
+  text-align: center;
 
   @media screen and (max-width: 1000px) {
-    scale: 0.8;
+    scale: 0.6;
   }
   .referance {
     position: absolute;
-    bottom: 10px;
-    scale: 0.8;
+    bottom: 0px;
+    scale: 0.4;
     z-index: 2;
   }
   p {

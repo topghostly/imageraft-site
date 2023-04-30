@@ -3,14 +3,17 @@ import ImageBanner from "../component/ImageBanner";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../component/Navbar";
 import { motion } from "framer-motion";
 import ImagePlaceholder from "../component/ImagePlaceholder";
 
-function Index() {
+function Index({ preloaders }) {
   let navigate = useNavigate();
   const [photos, setPhotos] = useState([]);
   const [placeHolder, setPlaceHolder] = useState(true);
+
+  const renderComponent = () => {
+    window.scrollTo(0, 0);
+  };
 
   const getRandomPhotos = async () => {
     const url = "https://api.pexels.com/v1/curated?per_page=80&page=1";
@@ -23,23 +26,24 @@ function Index() {
     const data = await response.json();
     setPhotos(data.photos);
     setPlaceHolder(false);
+    preloaders(false);
   };
 
   useEffect(() => {
+    renderComponent();
     getRandomPhotos();
   }, []);
 
   return (
     <TotalPage
       animate={{ opacity: 1, y: 0 }}
-      initial={{ opacity: 0 }}
-      exit={{ opacity: 0 }}
+      initial={{ opacity: 0, y: 30 }}
+      exit={{ opacity: 0, y: -30 }}
       transition={{
         ease: "easeInOut",
-        duration: 0.5,
+        duration: 0.2,
       }}
     >
-      <Navbar />
       <ImageBanner />
       {placeHolder && <ImagePlaceholder />}
       {/* Code for the images gallery */}
@@ -76,6 +80,13 @@ function Index() {
 const TotalPage = styled(motion.div)`
   max-width: 100vw;
   overflow-x: hidden;
+  margin-top: 100px;
+  @media screen and (max-width: 575px) {
+    margin-top: 0px;
+  }
+  * {
+    color: #353535;
+  }
 `;
 const Gallery = styled.div`
   max-width: 100vw;
@@ -151,6 +162,7 @@ const ImageHolder = styled.div`
 
       p {
         padding: 0px;
+        color: white;
         margin: 0px;
         transition: all 0.3s ease-in-out;
       }
@@ -210,7 +222,7 @@ const ImageHolder = styled.div`
       z-index: 4;
       margin: 0px;
       padding: 0px;
-      color: #000000;
+      color: #353535;
       padding-left: 0px;
       padding-bottom: 0px;
       font-size: 15px;
@@ -226,7 +238,7 @@ const ImageHolder = styled.div`
         z-index: 4;
         margin: 0px;
         padding: 0px;
-        color: #000000;
+        color: #353535;
         padding-left: 0px;
         padding-bottom: 0px;
       }

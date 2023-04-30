@@ -4,8 +4,8 @@ import ImagePlaceholder from "../component/ImagePlaceholder";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { BsFillArrowLeftCircleFill } from "react-icons/bs";
-function Details() {
+// import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+function Details({ preloaders }) {
   const navigate = useNavigate();
   const params = useParams();
   const [getIMG, setGetIMG] = useState("");
@@ -16,10 +16,10 @@ function Details() {
   const [imageHeight, setImageHeight] = useState("");
   const [placeHolder, setPlaceHolder] = useState(true);
 
-  // Get The Image to Download
-  const prevPage = () => {
-    navigate(-1);
+  const renderComponent = () => {
+    window.scrollTo(0, 0);
   };
+
   const getDownloadIMG = async (idd) => {
     const options = {
       headers: {
@@ -30,12 +30,14 @@ function Details() {
 
     const request = await fetch(url, options);
     const data = await request.json();
+    console.log(data);
     setGetIMG(data.src.large);
     setGetName(data.photographer);
     setOriginalImageSRC(data.src.original);
     setImageHeight(data.height);
     setImageWidth(data.height);
   };
+
   const downloadHandler = () => {
     const link = document.createElement("a");
     link.target = "_blank";
@@ -62,31 +64,38 @@ function Details() {
     setPlaceHolder(false);
   };
   useEffect(() => {
+    getPhotographerWorks();
+  });
+  useEffect(() => {
+    renderComponent();
+    preloaders(false);
+  }, [preloaders]);
+
+  useEffect(() => {
     getDownloadIMG(params.imageid);
   }, [params.imageid]);
-  useEffect(() => {
-    getPhotographerWorks();
-  }, [getName]);
   return (
     <PageWrapper
       animate={{ opacity: 1, y: 0 }}
-      initial={{ opacity: 0 }}
-      exit={{ opacity: 0 }}
+      initial={{ opacity: 0, y: 30 }}
+      exit={{ opacity: 0, y: -30 }}
       transition={{
         ease: "easeInOut",
-        duration: 0.5,
+        duration: 0.2,
       }}
     >
       <div className="container-sm">
         <WholeTab AnimateSharedLayout className="mt-2">
-          <div
-            className="home-link"
-            onClick={() => {
-              prevPage();
-            }}
-          >
-            <BsFillArrowLeftCircleFill />
-          </div>
+          {/* <div className="tl-absolute">
+            <div
+              className="home-link"
+              onClick={() => {
+                prevPage();
+              }}
+            >
+              <BsFillArrowLeftCircleFill />
+            </div>
+          </div> */}
           <DownloadIMG src={getIMG} alt="" />
           <DownloadTab className="mt-4">
             <div className="photo-name">
@@ -131,10 +140,15 @@ function Details() {
 }
 
 const PageWrapper = styled(motion.div)`
-  margin-top: 5px;
   max-width: 100vw;
   overflow-x: hidden;
-
+  * {
+    color: #353535;
+  }
+  margin-top: 100px;
+  @media screen and (max-width: 575px) {
+    margin-top: 0px;
+  }
   @media screen and (max-width: 767px) {
   }
 `;
@@ -145,11 +159,18 @@ const WholeTab = styled.div`
   flex-direction: column;
   align-items: center;
 
-  .home-link {
+  .tl-absolute {
     position: absolute;
-    top: 10px;
-    left: 15px;
-    scale: 2;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    z-index: 10;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .home-link {
+    position: relative;
     z-index: 10;
     cursor: pointer;
   }
@@ -182,6 +203,11 @@ const DownloadTab = styled.div`
     border: none;
     color: white;
     border-radius: 5px;
+    transition: all 0.2s ease;
+    :hover {
+      background-color: #6cc96c;
+      transition: all 0.2s ease;
+    }
   }
 `;
 const DownloadIMG = styled.img`
@@ -273,6 +299,7 @@ const WorkImageHolder = styled.div`
       p {
         padding: 0px;
         margin: 0px;
+        color: white;
         transition: all 0.3s ease-in-out;
       }
       .small {
@@ -333,7 +360,7 @@ const WorkImageHolder = styled.div`
       z-index: 4;
       margin: 0px;
       padding: 0px;
-      color: #000000;
+      color: #353535;
       padding-left: 0px;
       padding-bottom: 0px;
       font-size: 15px;
@@ -349,7 +376,7 @@ const WorkImageHolder = styled.div`
         z-index: 4;
         margin: 0px;
         padding: 0px;
-        color: #000000;
+        color: #353535;
         padding-left: 0px;
         padding-bottom: 0px;
       }
