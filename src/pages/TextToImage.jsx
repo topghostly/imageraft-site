@@ -50,7 +50,7 @@ function TextToImage({ preloaders }) {
       }}
     >
       <div className="container-sm">
-        <div className="row">
+        <div className="row mb-5">
           <div className="col-md-3 co-1">
             <div className="description-container">
               <label htmlFor="image-description">Image description</label>
@@ -98,9 +98,10 @@ function TextToImage({ preloaders }) {
 const ViewPort = styled(motion.div)`
   max-width: 100vw;
   min-height: 60vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   padding-top: 50px;
   margin-top: 100px;
+  margin-bottom: 100px;
   @media screen and (max-width: 575px) {
     margin-top: 0px;
   }
@@ -131,7 +132,6 @@ const ViewPort = styled(motion.div)`
       outline: none;
       padding: 10px;
       color: #353535;
-      margin-bottom: 10px;
     }
     input {
       position: relative;

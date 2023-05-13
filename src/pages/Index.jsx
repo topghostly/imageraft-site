@@ -46,8 +46,8 @@ function Index({ preloaders }) {
     >
       <ImageBanner />
       {placeHolder && <ImagePlaceholder />}
-      {/* Code for the images gallery */}
 
+      {/* Code for the images gallery */}
       <div className="container-sm">
         <Gallery>
           {photos.map((photo) => {

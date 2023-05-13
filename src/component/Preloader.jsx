@@ -1,28 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import logo from "./static/navLogo-07.png";
 import { motion } from "framer-motion";
 function Preloader() {
-  const [isReverse, setIsReverse] = useState(false);
+  // const [isReverse, setIsReverse] = useState(false);
 
-  const forwardMotion = {
-    scale: 0.7,
-    transition: {
-      duration: 1.5,
-      ease: "easeInOut",
-    },
-  };
+  // const forwardMotion = {
+  //   scale: 0.7,
+  //   transition: {
+  //     duration: 1.5,
+  //     ease: "easeInOut",
+  //   },
+  // };
 
-  const reverseMotion = {
-    scale: 0.5,
-    transition: {
-      duration: 1.5,
-      ease: "easeInOut",
-    },
-  };
-  const animationComplete = () => {
-    setIsReverse(!isReverse);
-  };
+  // const reverseMotion = {
+  //   scale: 0.5,
+  //   transition: {
+  //     duration: 1.5,
+  //     ease: "easeInOut",
+  //   },
+  // };
+  // const animationComplete = () => {
+  //   setIsReverse(!isReverse);
+  // };
   return (
     <PreloaderBody
       initial={{ opacity: 1 }}
@@ -34,7 +34,7 @@ function Preloader() {
       }}
     >
       <View
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -50 }}
         transition={{
@@ -43,11 +43,36 @@ function Preloader() {
         }}
       >
         <motion.img
-          animate={isReverse ? reverseMotion : forwardMotion}
-          onAnimationComplete={animationComplete}
+          initial={{ opacity: 1, x: 90, scale: 0.5 }}
+          animate={{ opacity: 1, x: 0, scale: 0.4 }}
+          transition={{
+            duration: 0.8,
+            delay: 1,
+          }}
+          // onAnimationComplete={[animationComplete]}
           src={logo}
           alt=""
         />
+        <motion.p
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            delay: 2.04,
+            duration: 1,
+          }}
+          style={{
+            fontSize: "18px",
+            fontWeight: "bolder",
+            marginBottom: "0px",
+            width: "90.03",
+          }}
+        >
+          imageRaft
+        </motion.p>
       </View>
     </PreloaderBody>
   );
@@ -58,6 +83,9 @@ const PreloaderBody = styled(motion.div)`
   z-index: 9999;
   max-width: 100vw;
   max-height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 9999;
   overflow-x: hidden;
 `;
 const View = styled(motion.div)`
@@ -66,11 +94,13 @@ const View = styled(motion.div)`
   position: fixed;
   display: flex;
   justify-content: center;
+  gap: 0px;
   align-items: center;
   background-color: white;
 
   img {
     display: relative;
+    margin-left: 10px;
     width: 60px;
   }
 `;
