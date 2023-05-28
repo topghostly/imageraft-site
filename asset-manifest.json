@@ -1,19 +1,18 @@
 {
   "files": {
-    "main.css": "/imageraft-site/static/css/main.91ca0989.css",
-    "main.js": "/imageraft-site/static/js/main.fbe8a310.js",
+    "main.css": "/imageraft-site/static/css/main.a5beb992.css",
+    "main.js": "/imageraft-site/static/js/main.50057ba1.js",
+    "static/media/backGround.jpg": "/imageraft-site/static/media/backGround.dff8ba357aa42d84a5ec.jpg",
     "static/media/texe2image.png": "/imageraft-site/static/media/texe2image.1630aeaef8ea6949044c.png",
     "static/media/Euclid Circular A Medium.ttf": "/imageraft-site/static/media/Euclid Circular A Medium.a5befbfcb71cd093cc56.ttf",
     "static/media/navLogo-07.png": "/imageraft-site/static/media/navLogo-07.a9226abadc2ddc998247.png",
-    "static/media/backGround.jpg": "/imageraft-site/static/media/backGround.7c7001abe4ad75dd0bf4.jpg",
-    "static/media/imageraftSingle-05.png": "/imageraft-site/static/media/imageraftSingle-05.c770a39c1a32f48401c5.png",
     "static/media/imageraft.png": "/imageraft-site/static/media/imageraft.a671fae008141425e457.png",
     "index.html": "/imageraft-site/index.html",
-    "main.91ca0989.css.map": "/imageraft-site/static/css/main.91ca0989.css.map",
-    "main.fbe8a310.js.map": "/imageraft-site/static/js/main.fbe8a310.js.map"
+    "main.a5beb992.css.map": "/imageraft-site/static/css/main.a5beb992.css.map",
+    "main.50057ba1.js.map": "/imageraft-site/static/js/main.50057ba1.js.map"
   },
   "entrypoints": [
-    "static/css/main.91ca0989.css",
-    "static/js/main.fbe8a310.js"
+    "static/css/main.a5beb992.css",
+    "static/js/main.50057ba1.js"
   ]
 }
