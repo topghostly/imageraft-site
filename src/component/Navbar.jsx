@@ -77,11 +77,6 @@ function Navibar() {
         <TTI to={"imageraft-site/imageai"}>Text To image</TTI>
       </Navbar>
       <SliderContainer>
-        <ShadoeContainer
-          transition={{
-            staggerChildren: 0.2,
-          }}
-        >
           <Slider to={"/imageraft-site/query/art"} variants={showUp}>
             <p>Art</p>
           </Slider>
@@ -136,7 +131,6 @@ function Navibar() {
           <Slider variants={showUp} to={"/imageraft-site/query/engine"}>
             <p>Engine</p>
           </Slider>
-        </ShadoeContainer>
       </SliderContainer>
     </NavWrapper>
   );
@@ -213,33 +207,10 @@ const SliderContainer = styled.div`
   background-color: #ffffff;
 
   ::-webkit-scrollbar {
-    display: none;
+    display: none;dddd
   }
 `;
-const ShadoeContainer = styled.div`
-  position: relative;
-  width: 100vw;
-  height: 40px;
-  ::before {
-    content: "";
-    position: absolute;
-    display: none;
-    scroll-snap-align: center;
-    bottom: 0px;
-    left: 0px;
-    width: 100vw;
-    height: 50px;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0) 5%,
-      rgba(255, 255, 255, 0) 80%,
-      rgba(255, 255, 255, 1) 100%
-    );
-    z-index: 2;
-    pointer-events: none;
-  }
-`;
+
 
 const Slider = styled(NavLink)`
   display: inline-block;
