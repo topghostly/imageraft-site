@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import ImagePlaceholder from "../component/ImagePlaceholder";
 
-function Index({ preloaders }) {
+function Index() {
   let navigate = useNavigate();
   const [photos, setPhotos] = useState([]);
   const [placeHolder, setPlaceHolder] = useState(true);
@@ -26,7 +26,6 @@ function Index({ preloaders }) {
     const data = await response.json();
     setPhotos(data.photos);
     setPlaceHolder(false);
-    preloaders(false);
   };
 
   useEffect(() => {

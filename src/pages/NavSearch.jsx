@@ -5,7 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import ImagePlaceholder from "../component/ImagePlaceholder";
 
-function NavSearch({ preloaders }) {
+function NavSearch() {
   const navigate = useNavigate();
   const [searchIMG, getSearchedIMG] = useState([]);
   const [placeHolder, setPlaceHolder] = useState(true);
@@ -33,8 +33,7 @@ function NavSearch({ preloaders }) {
 
   useEffect(() => {
     renderComponent();
-    preloaders(false);
-  }, [preloaders]);
+  });
   useEffect(() => {
     getSearchedItem(searchKeyword);
   }, [searchKeyword]);

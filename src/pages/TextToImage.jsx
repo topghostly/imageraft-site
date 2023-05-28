@@ -6,7 +6,7 @@ import "../App.css";
 import initimage from "../component/static/texe2image.png";
 import ImagePlaceholder from "../component/ImagePlaceholder";
 import { useState, useEffect } from "react";
-function TextToImage({ preloaders }) {
+function TextToImage() {
   const [placeholder, setPlaceHolder] = useState(false);
   const [prompt, setPrompt] = useState("");
   const [size, setSize] = useState("1024x1024");
@@ -36,9 +36,6 @@ function TextToImage({ preloaders }) {
       console.log(data);
     } catch (error) {}
   };
-  useEffect(() => {
-    preloaders(false);
-  }, [preloaders]);
   return (
     <ViewPort
       animate={{ opacity: 1, y: 0 }}

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import BackgroundIMG from "./static/backGround.jpg";
-import Logo from "./static/imageraftSingle-05.png";
+import Logo from "./static/navLogo-07.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function ImageBanner() {
@@ -18,7 +18,7 @@ function ImageBanner() {
 
 const Banner = styled.div`
   position: relative;
-  height: 100vh;
+  height: 85vh;
   width: 100vw;
   margin: 0px;
   padding: 0px;
@@ -33,10 +33,10 @@ const Banner = styled.div`
     opacity: 0.6;
   }
   @media screen and (max-width: 1000px) {
-    height: 60vh;
+    height: 40vh;
   }
   p {
-    color: white;
+    color: #353535;
   }
   ::before {
     content: "";

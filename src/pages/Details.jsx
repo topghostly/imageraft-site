@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 // import { BsFillArrowLeftCircleFill } from "react-icons/bs";
-function Details({ preloaders }) {
+function Details() {
   const navigate = useNavigate();
   const params = useParams();
   const [getIMG, setGetIMG] = useState("");
@@ -68,8 +68,7 @@ function Details({ preloaders }) {
   });
   useEffect(() => {
     renderComponent();
-    preloaders(false);
-  }, [preloaders]);
+  });
 
   useEffect(() => {
     getDownloadIMG(params.imageid);
