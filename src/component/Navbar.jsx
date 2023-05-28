@@ -156,7 +156,7 @@ const NavWrapper = styled(motion.div)`
 `;
 const Navbar = styled.div`
   position: relative;
-  height: 4rem;
+  height: 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -168,7 +168,7 @@ const Navbar = styled.div`
 
     input {
       width: 100%;
-      height: 40px;
+      height: 35px;
       border-radius: 100px;
       padding: 0px 30px;
       outline: none;
@@ -219,7 +219,7 @@ const SliderContainer = styled.div`
 const ShadoeContainer = styled.div`
   position: relative;
   width: 100vw;
-  height: 45px;
+  height: 40px;
   ::before {
     content: "";
     position: absolute;
