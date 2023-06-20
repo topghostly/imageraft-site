@@ -68,7 +68,7 @@ function Details() {
   });
   useEffect(() => {
     renderComponent();
-  });
+  }, []);
 
   useEffect(() => {
     getDownloadIMG(params.imageid);

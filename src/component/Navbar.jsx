@@ -77,60 +77,60 @@ function Navibar() {
         <TTI to={"imageraft-site/imageai"}>Text To image</TTI>
       </Navbar>
       <SliderContainer>
-          <Slider to={"/imageraft-site/query/art"} variants={showUp}>
-            <p>Art</p>
-          </Slider>
-          <Slider variants={showUp} to={"/imageraft-site/query/architecture"}>
-            <p>Architecture</p>
-          </Slider>
-          <Slider variants={showUp} to={"/imageraft-site/query/landscape"}>
-            <p>Landscape</p>
-          </Slider>
-          <Slider variants={showUp} to={"/imageraft-site/query/illustration"}>
-            <p>Illustration</p>
-          </Slider>
-          <Slider variants={showUp} to={"/imageraft-site/query/birds"}>
-            <p>Birds</p>
-          </Slider>
-          <Slider variants={showUp} to={"/imageraft-site/query/building"}>
-            <p>Buildings</p>
-          </Slider>
-          <Slider variants={showUp} to={"/imageraft-site/query/forest"}>
-            <p>Forest</p>
-          </Slider>
-          <Slider variants={showUp} to={"/imageraft-site/query/technology"}>
-            <p>Technology</p>
-          </Slider>
-          <Slider variants={showUp} to={"/imageraft-site/query/experimental"}>
-            <p>Experimental</p>
-          </Slider>
-          <Slider variants={showUp} to={"/imageraft-site/query/beauty"}>
-            <p>Beauty</p>
-          </Slider>
-          <Slider variants={showUp} to={"/imageraft-site/query/interior"}>
-            <p>Interior</p>
-          </Slider>
-          <Slider variants={showUp} to={"/imageraft-site/query/mountain"}>
-            <p>Mountains</p>
-          </Slider>
-          <Slider variants={showUp} to={"/imageraft-site/query/bread"}>
-            <p>Bread</p>
-          </Slider>
-          <Slider variants={showUp} to={"/imageraft-site/query/smile"}>
-            <p>Smile</p>
-          </Slider>
-          <Slider variants={showUp} to={"/imageraft-site/query/pineapple"}>
-            <p>Pineapple</p>
-          </Slider>
-          <Slider variants={showUp} to={"/imageraft-site/query/elephant"}>
-            <p>Elephant</p>
-          </Slider>
-          <Slider variants={showUp} to={"/imageraft-site/query/chemistry"}>
-            <p>Chemistry</p>
-          </Slider>
-          <Slider variants={showUp} to={"/imageraft-site/query/engine"}>
-            <p>Engine</p>
-          </Slider>
+        <Slider to={"/imageraft-site/query/art"} variants={showUp}>
+          <p>Art</p>
+        </Slider>
+        <Slider variants={showUp} to={"/imageraft-site/query/architecture"}>
+          <p>Architecture</p>
+        </Slider>
+        <Slider variants={showUp} to={"/imageraft-site/query/landscape"}>
+          <p>Landscape</p>
+        </Slider>
+        <Slider variants={showUp} to={"/imageraft-site/query/illustration"}>
+          <p>Illustration</p>
+        </Slider>
+        <Slider variants={showUp} to={"/imageraft-site/query/birds"}>
+          <p>Birds</p>
+        </Slider>
+        <Slider variants={showUp} to={"/imageraft-site/query/building"}>
+          <p>Buildings</p>
+        </Slider>
+        <Slider variants={showUp} to={"/imageraft-site/query/forest"}>
+          <p>Forest</p>
+        </Slider>
+        <Slider variants={showUp} to={"/imageraft-site/query/technology"}>
+          <p>Technology</p>
+        </Slider>
+        <Slider variants={showUp} to={"/imageraft-site/query/experimental"}>
+          <p>Experimental</p>
+        </Slider>
+        <Slider variants={showUp} to={"/imageraft-site/query/beauty"}>
+          <p>Beauty</p>
+        </Slider>
+        <Slider variants={showUp} to={"/imageraft-site/query/interior"}>
+          <p>Interior</p>
+        </Slider>
+        <Slider variants={showUp} to={"/imageraft-site/query/mountain"}>
+          <p>Mountains</p>
+        </Slider>
+        <Slider variants={showUp} to={"/imageraft-site/query/bread"}>
+          <p>Bread</p>
+        </Slider>
+        <Slider variants={showUp} to={"/imageraft-site/query/smile"}>
+          <p>Smile</p>
+        </Slider>
+        <Slider variants={showUp} to={"/imageraft-site/query/pineapple"}>
+          <p>Pineapple</p>
+        </Slider>
+        <Slider variants={showUp} to={"/imageraft-site/query/elephant"}>
+          <p>Elephant</p>
+        </Slider>
+        <Slider variants={showUp} to={"/imageraft-site/query/chemistry"}>
+          <p>Chemistry</p>
+        </Slider>
+        <Slider variants={showUp} to={"/imageraft-site/query/engine"}>
+          <p>Engine</p>
+        </Slider>
       </SliderContainer>
     </NavWrapper>
   );
@@ -207,10 +207,9 @@ const SliderContainer = styled.div`
   background-color: #ffffff;
 
   ::-webkit-scrollbar {
-    display: none;dddd
+    display: none;
   }
 `;
-
 
 const Slider = styled(NavLink)`
   display: inline-block;
