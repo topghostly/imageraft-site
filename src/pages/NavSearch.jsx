@@ -33,7 +33,7 @@ function NavSearch() {
 
   useEffect(() => {
     renderComponent();
-  });
+  }, []);
   useEffect(() => {
     getSearchedItem(searchKeyword);
   }, [searchKeyword]);

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ImageBanner from "../component/ImageBanner";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
@@ -43,7 +42,6 @@ function Index() {
         duration: 0.2,
       }}
     >
-      <ImageBanner />
       {placeHolder && <ImagePlaceholder />}
 
       {/* Code for the images gallery */}
