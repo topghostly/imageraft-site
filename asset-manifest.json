@@ -1,18 +1,17 @@
 {
   "files": {
     "main.css": "/imageraft-site/static/css/main.a5beb992.css",
-    "main.js": "/imageraft-site/static/js/main.623b41b3.js",
-    "static/media/backGround.jpg": "/imageraft-site/static/media/backGround.dff8ba357aa42d84a5ec.jpg",
+    "main.js": "/imageraft-site/static/js/main.2984cf23.js",
     "static/media/texe2image.png": "/imageraft-site/static/media/texe2image.1630aeaef8ea6949044c.png",
     "static/media/Euclid Circular A Medium.ttf": "/imageraft-site/static/media/Euclid Circular A Medium.a5befbfcb71cd093cc56.ttf",
     "static/media/navLogo-07.png": "/imageraft-site/static/media/navLogo-07.a9226abadc2ddc998247.png",
     "static/media/imageraft.png": "/imageraft-site/static/media/imageraft.a671fae008141425e457.png",
     "index.html": "/imageraft-site/index.html",
     "main.a5beb992.css.map": "/imageraft-site/static/css/main.a5beb992.css.map",
-    "main.623b41b3.js.map": "/imageraft-site/static/js/main.623b41b3.js.map"
+    "main.2984cf23.js.map": "/imageraft-site/static/js/main.2984cf23.js.map"
   },
   "entrypoints": [
     "static/css/main.a5beb992.css",
-    "static/js/main.623b41b3.js"
+    "static/js/main.2984cf23.js"
   ]
 }
